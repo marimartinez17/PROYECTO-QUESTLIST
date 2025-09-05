@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     guardarLocalStorage();
 
                     // Sumar 10XP por cada tarea completada
-                    if (isChecked){
+                    if (isChecked && !li.classList.contains('completed')) {
                         xp += 10;
                     }
                 });
