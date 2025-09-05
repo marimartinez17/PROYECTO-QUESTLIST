@@ -158,6 +158,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Marcar / Desmarcar tarea
                 checkbox.addEventListener('change', () => {
                     const isChecked = checkbox.checked;
+
+                    if (isChecked) {
+                        xp += 10;
+                    }
+
                     li.classList.toggle('completed', isChecked);
                     editarBtn.disabled = isChecked;
                     editarBtn.style.opacity = isChecked ? '0.5' : '1';
@@ -165,10 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     actualizarProgreso();
                     guardarLocalStorage();
 
-                    // Sumar 10XP por cada tarea completada
-                    if (isChecked){
-                        xp += 10;
-                    }
                 });
 
                 // Editar tarea
