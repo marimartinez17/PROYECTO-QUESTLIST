@@ -1,0 +1,130 @@
+/*ESTILIZADO DEL ARCHIVO HTML PRINCIPAL INDEX.HTML */
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: #FFE1D5;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*Div donde carga el contenido*/
+#app {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFE1D5;
+}
+
+.navbar {
+    display: flex;
+    background-color: #FF6F61 !important;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar-nav .nav-link:hover {
+    margin-left: auto;
+    color: #962a20 !important; /* Selector corregido */
+}
+
+.card {
+    border: none;
+    background-color: #ff6e6162;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.body, .navbar, .hero, .nav-link, .navbar-brand, footer{
+    font-family: 'Poppins', sans-serif;
+}
+
+#comenzar{
+    color: #fff;
+    border: none;
+}
+
+.navbar-brand {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff !important;
+}
+
+.bi {
+    margin-right: 10px;
+}
+.nav-link {
+    color: #fff !important;
+    margin-right: 15px;
+    font-weight: semi-bold;
+}
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 600px;
+    width: 100%;
+}
+
+.dashboard {
+    background-color:  #FFE1D5;
+    border: none;
+}
+
+.hero, .dashboard {
+    min-height: calc(100vh - 70px - 120px);
+}
+
+.hero-content h1 {
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #00124D;
+}
+
+
+.footer {
+        background: linear-gradient(135deg, #ff6f61, #ffb0b0);
+        color: #fff;
+        padding: 2rem 0;
+        text-align: center;
+        margin-top: auto;
+    }
+    .footer .social-icons {
+        margin: 1rem 0;
+    }
+    .footer .social-icons a {
+        color: #fff;
+        margin: 0 0.5rem;
+        font-size: 1.5rem;
+        transition: color 0.3s;
+    }
+    .footer .social-icons a:hover {
+        color: #ff6f61;
+    }
+    .footer .footer-links {
+        margin: 1rem 0;
+    }
+    .footer .footer-links a {
+        color: #fff;
+        margin: 0 0.5rem;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    .footer .footer-links a:hover {
+        color: #ff6f61;
+    }
+

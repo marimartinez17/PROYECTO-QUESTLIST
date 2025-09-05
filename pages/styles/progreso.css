@@ -1,0 +1,556 @@
+/* Body y layout */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/*body*/
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-color: #FFE1D5;
+    margin: 0;
+    padding-top: 58px;
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    flex: 1;
+}
+
+.progress-chart {
+    width: 100%;
+    height: 250px;
+}
+
+/* Cards */
+.card {
+    border: none;
+    background-color: #ff6e6162;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    height: 100%;
+    width: 100%; 
+    gap: 1rem;
+    box-sizing: border-box;
+}
+
+/*Bienvenida al usuario*/
+.user-info {
+    display: flex; 
+    flex-direction: column;
+    padding-top: 56px;
+    padding-left: 9%;
+    justify-content: left;
+}
+
+/*Contenedor de la lista de tareas*/
+.todo-container {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-direction: column;
+    width: 100%;
+    max-height: 500px;
+    overflow-y: auto;
+    margin: 0 auto; 
+}
+
+
+/* Dashboard */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+/*Títulos*/
+h1,h2,h3,h4,h5 {
+    color:#962a20;
+}
+
+/*Párrafos*/
+p {
+    color: rgb(31, 31, 31);
+}
+
+
+.detalles {
+    width: 100%;
+}
+
+.detalles h3 {
+    color: #ffffff;
+}
+
+/* Gráfico de dona hecho con HTML5 canvas y chart.js*/
+.progress-chart {
+    width: 100%;
+    max-height: 250px;
+}
+
+/* Tareas */
+.todo-app {
+    width: 100%;
+    max-width: 1000px;
+    padding: 2rem;
+    display: flex;
+    align-items: stretch;
+    align-content: stretch;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 2rem;
+    color:#962a20;
+    background-color: #ff6e6185;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-sizing: border-box;
+}
+
+/* -------------------------- Vacío -------------------------------*/
+/*Contenido vacío*/
+#empty {
+    width:max-content;
+}
+
+/*Imagen mostrada*/
+.carita {
+    height: 1px;
+    width: 1px;
+}
+
+/* ---------------------- Formulario agregar tareas ---------------------- */
+.input-tasks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/*Campo de texto*/
+.input-tasks input{
+    flex: 1;
+    padding: 10px 17px;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    border-radius: 22px;
+    background-color: #ff6e6198;
+}
+
+/* Boton submit*/
+.input-tasks button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    padding: 8px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.1rem;
+    background-color: #962a20;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Cambio de color al pasar mouse */
+.input-tasks button:hover {
+    background-color: rgb(99, 37, 31);
+    color: #fff;
+}
+
+/* ---------------------- Lista de tareas ---------------------- */
+#task-list {
+    width: 100%;
+}
+
+/*Elementos de la lista*/
+#task-list li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ff6e6198;
+    margin-bottom: 10px;
+    padding: 8px 10px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    color:#FFE1D5;
+    position: relative;
+    transition: box-shadow 0.2s ease;
+}
+
+/* sombra al pasar mouse */
+#task-list li:hover{
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/*Checkbox de las tareas*/
+#task-list li .checkbox {
+    min-width: 20px;
+    height: 20px;
+    border: 2px solid rgb(255, 255, 255);
+    background-color: transparent;
+    border-radius: 50%;
+    appearance: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/*Estilo del checkbox al ser marcado*/
+#task-list li .checkbox:checked {
+    background-color: #962a20;
+    transform: scale(1.1);
+}
+
+/*Añade un check si el checkbox está marcado*/
+#task-list li .checkbox:checked::before {
+    content: '\2713'; /*Unicode para el check*/
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+
+#task-list li span {
+    flex: 1;
+    margin-left: 10px;
+    word-wrap: break-word;   
+}
+
+/* Tachar tarea completada */
+#task-list li.completed span {
+    text-decoration: 2px line-through #ffffff ;  
+}
+
+/* Botones de editar / eliminar */
+.task-buttons {
+    display: flex;
+    gap: 10px;
+    margin-right: auto;
+}
+
+.task-buttons button {
+    background: #962a20;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    color: #ffffff;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2 ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Cambio de color al pasar mouse */
+.task-buttons button:hover {
+    background: #7c1e15;
+    transform: scale(1.2);
+}
+
+/*Colores para los botones*/
+.task-buttons .editar-btn{
+    background-color: #ffb13d;
+}
+.task-buttons .eliminar-btn{
+    background-color: #f72b2b;
+}
+
+
+.input-tasks button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    padding: 8px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.1rem;
+    background-color: #962a20;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Cambio de color al pasar mouse */
+.input-tasks button:hover {
+    background-color: rgb(99, 37, 31);
+    color: #fff;
+}
+
+/*Estadísticas de tareas completadas*/
+.stat-container {
+    padding: 15px 20px;
+    border-radius: 25px;
+    border: none;
+    background-color: #ff6e6198;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+/* ---------------------- Barra de progreso ---------------------- */
+
+/*Barra en blanco*/
+#progressbar {
+    width: 100%;
+    height: 7px;
+    background-color: #ffedeb;
+    border-radius: 20px;
+    position: relative;
+    margin-top: 15px;
+}
+
+/*Barra al progresar*/
+#progreso {
+    width: 0%;
+    height: 100%;
+    background-color: #962a20;
+    border-radius: 20px;
+    transition: width 0.3s ease;
+}
+
+/*Circulo con cantidad de tareas*/
+#numbers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background-color: #962a20;
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-radius: 50%;
+    font-size: 1.5rem;
+}
+
+/* ---------------------- Navbar ---------------------- */
+.navbar {
+    display: flex;
+    background-color: #FF6F61 !important;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Cambio de color al pasar mouse */
+.navbar-nav .nav-link:hover {
+    margin-left: auto;
+    color: #962a20 !important; /* Selector corregido */
+}
+
+.card {
+    border: none;
+    background-color: #ff6e6162;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+
+#comenzar{
+    /*background-color: #FF6F61;*/
+    color: #fff;
+    border: none;
+}
+
+.navbar-brand {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff !important;
+}
+
+.bi {
+    margin-right: 10px;
+}
+.nav-link {
+    color: #fff !important;
+    margin-right: 15px;
+    font-weight: semi-bold;
+}
+
+
+/* ---------------------- Footer ---------------------- */
+.footer {
+        background: linear-gradient(135deg, #ff6f61, #ffb0b0);
+        color: #fff;
+        padding: 2rem 0;
+        text-align: center;
+        margin-top: auto;
+    }
+    .footer .social-icons {
+        margin: 1rem 0;
+    }
+    .footer .social-icons a {
+        color: #fff;
+        margin: 0 0.5rem;
+        font-size: 1.5rem;
+        transition: color 0.3s;
+    }
+    .footer .social-icons a:hover {
+        color: #ff6f61; /* Cambio de color al pasar mouse */
+    }
+    .footer .footer-links {
+        margin: 1rem 0;
+    }
+    .footer .footer-links a {
+        color: #fff;
+        margin: 0 0.5rem;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    /* Cambio de color al pasar mouse */
+    .footer .footer-links a:hover {
+        color: #ff6f61;
+    }
+
+
+main {
+    flex: 1
+}
+
+/* ---------------------- Celulares ---------------------- */
+@media (max-width: 600px) {
+    body {
+        padding-top: 50px; /* Ajusta padding por navbar */
+    }
+
+    .todo-app {
+        padding: 1rem;
+        gap: 1rem;
+        max-width: 100%;
+    }
+
+    .todo-container {
+        max-height: 400px; /* Ajusta altura para móviles */
+        gap: 1rem;
+    }
+
+    #task-list li {
+        font-size: 1rem;
+        padding: 6px 8px;
+        border-radius: 20px;
+    }
+
+    #task-list li span {
+        flex: 1;                 
+        white-space: normal;     
+        word-wrap: break-word;   
+        overflow-wrap: break-word;
+    }
+
+    .input-tasks input {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+
+    .input-tasks button {
+        padding: 6px;
+        font-size: 1rem;
+    }
+
+    .stat-container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    #numbers {
+        width: 60px;
+        height: 60px;
+        font-size: 1.2rem;
+    }
+
+    .progress-chart {
+        max-height: 250px;
+    }
+
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+}
+
+/* ---------------------- Tablets ---------------------- */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .todo-app {
+        padding: 1.5rem;
+        max-width: 90%;
+    }
+
+    .todo-container {
+        max-height: 450px;
+        gap: 1.5rem;
+    }
+
+    #task-list li {
+        font-size: 1.1rem;
+        padding: 7px 10px;
+        border-radius: 25px;
+    }
+
+    #task-list li span {
+        flex: 1;
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        line-height: 1.3;
+    }
+
+    .input-tasks input {
+        font-size: 1.05rem;
+        padding: 9px 14px;
+    }
+
+    .input-tasks button {
+        font-size: 1.05rem;
+        padding: 7px;
+    }
+
+    .stat-container {
+        flex-direction: row;
+        gap: 20px;
+        padding: 12px 15px;
+    }
+
+    #numbers {
+        width: 70px;
+        height: 70px;
+        font-size: 1.3rem;
+    }
+
+    .progress-chart {
+        max-height: 350px;
+    }
+
+    .navbar-brand {
+        font-size: 1.8rem;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+    }
+}
