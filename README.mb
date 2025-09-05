@@ -1,0 +1,57 @@
+PROYECTO SPA: QuestList.
+ESTUDIANTE: María Martínez.
+
+Questlist se trata de una página web SPA que permite getsionar tareas diarias por medio de un enfoque
+gamificado. Tiene como objetivo ayudar y motivar al usuario a cumplir sus metas, ganando puntos (XP) 
+por cada tarea completada.
+
+TECNOLOGÍAS UTILIZADAS:
+* HTML5
+* CSS3
+* JavaScript Vanilla
+* Bootstrap 5
+* Chart.js
+* CSS Grid
+* CSS Flexbox
+* Librerías externas
+
+ESTRUCTURA DEL WEBSITE SPA:
+
+PAGES HTML:
+* index.html: Es la página cargada por el navegador, que incluye el header (con un navbar que permite
+el desplazamiento por el website), footer y un contenedor vacío (id="app") en donde se insertará el
+contenido de las demás secciones.
+
+* Inicio (inicio.html): Es la pantalla de inicio de la página web que incluye la hero section junto con un 
+botón que redirige al dashboard, también incluido en la navbar como: "Mi progreso".
+
+* Mi progreso (progreso.html): Es el corazón de la SPA, ya que se trata de un dashboard que permite al 
+usuario, el cual se divide en dos cards principales:
+
+    1. Mi progreso: Permite observar gráficamente el progreso de completación de tareas con un gráfico de dona 
+    (hecho con Chart.js y HTML5 canvas), así como ver la cantidad de XP acumulado por el usuario (+10 por cada
+    tarea completada), la cantidad de tareas completadas y las tareas pendientes.
+
+    2. Mis tareas: Incluye una barra de progreso de las tareas actuales, un form que permite al usuario agregar 
+    una tarea, así como ver la lista de tareas, donde pueden ser eliminadas o editadas. Al completar todas las 
+    tareas se produce una animación de confetti hecha con la librería Confetti.js.
+
+SCRIPTS:
+* app.js: Es el archivo JavaScript en donde se mapea el routing del SPA. Ya que relaciona las rutas como #inicio
+y #progreso con los archivos HTML. Detecta cuando el usuario hace clic en el enlace y carga solo el contenido en
+el <div id="app">, usando fetch para traer el HTML a la ruta que corresponda.
+
+* tareas.js: Es el archivo JavaScript encargado de el funcionamiento de la pestaña progreso.
+Permite crear nuevas tareas, marcarlas como completadas o eliminarlas, así como insertar las tareas a la task list
+y almacenar las tareas, progreso y XP acumulado por el usuario en localStorage para que las tareas permanezcan al 
+recargar la pagina.
+
+ESTILIZACIÓN CON CSS: 
+
+En las diferentes stylesheets se utilizó Bootstrap para facilitar el proceso por medio de estilos predefinidos como 
+la navbar. De igual manera el uso de flexbox está presente en la navbar, el body, la hero section y otros elementos 
+de navegación. Por otro lado, Grid fué utilizado para el sistema de columnas del layout para mostrar las cartas 
+alineadas dividiendo secciones.
+
+Por medio de esta estructura, QuestList combina HTML, CSS y JS Vanilla para dar un toque interactivo y motivador 
+gracias a la gamificación de la lista de tareas.

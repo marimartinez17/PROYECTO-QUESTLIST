@@ -137,8 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <input type="checkbox" class="checkbox" ${completed ? 'checked' : ''}>
                     <span>${taskText}</span>
                     <div class="task-buttons">
-                        <button class="editar-btn"><i class="fa-solid fa-pen"></i></button>
-                        <button class="eliminar-btn"><i class="fa-solid fa-trash"></i></button>
+                        <button class="editar-btn" aria-label="editar tarea"><i class="fa-solid fa-pen"></i></button>
+                        <button class="eliminar-btn" aria-label="eliminar tarea"><i class="fa-solid fa-trash"></i></button>
                     </div>
                 `;
 
