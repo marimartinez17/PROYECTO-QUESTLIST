@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Contenedor de la lista de tareas
         const todosContainer = document.querySelector('.todo-container');
         // Barra de progreso (completación de tareas)
-        const progressBar = document.getElementById('progreso');
+        const progressBar = document.getElementById('progresito');
         // Cantidad de tareas completadas n/n
         const progressNumbers = document.getElementById('numbers');
         //XP TOTAL acumulado por el usuario
@@ -203,6 +203,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 tasksGuardadas.forEach(({ text, completed }) => {
                     agregarTarea(text, completed);
                 });
+
+                    setTimeout(() => {
+                        actualizarProgreso(false);
+                        toggleListaVacia();
+                    }, 0);
                 toggleListaVacia();
                 actualizarProgreso();
             };
@@ -214,8 +219,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 agregarTarea();
             });
 
-            // Cargar datos iniciales
             cargarTasksLocalStorage();
+            actualizarProgreso();
             toggleListaVacia();
         }
     }, 50);
