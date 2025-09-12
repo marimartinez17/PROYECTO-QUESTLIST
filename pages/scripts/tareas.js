@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Esperar a que cargue el DOM para ejecutar codigo
 
-    const checkDOM = setInterval(() => {
-
-        // Revisa cada 50ms  existen los elementos
+    requestAnimationFrame(()=>{
+    // Revisa cada 50ms  existen los elementos
 
         ///////////////// ELEMENTOS DEL DOM /////////////////////////
 
@@ -34,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Deja de revisar cuando todos los elementos ya estan cargados
         if (chartCanvas && taskList && taskInput && botonAgregar && form && emptyImg) {
-            clearInterval(checkDOM);
 
             // Carga el XP acumulado por el usuario (desde localStorage)
             let xp = parseInt(localStorage.getItem('xp')) || 0;
@@ -220,10 +218,13 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             cargarTasksLocalStorage();
-            actualizarProgreso();
-            toggleListaVacia();
+                setTimeout(() => {
+                actualizarProgreso();
+                toggleListaVacia();
+                chartProgreso.update();
+            }, 100);
         }
-    }, 50);
+    });
 });
 
 ///////////// FUNCIÓN PARA LANZAR CONFETTI ///////////////////////////////////////////////////////////////

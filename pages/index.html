@@ -10,6 +10,7 @@
         <link href="./styles/style.css" rel="stylesheet" type="text/css" media="screen">
         <link href="./styles/inicio.css" rel="stylesheet" type="text/css" media="screen">
         <link href="./styles/progreso.css" rel="stylesheet" type="text/css" media="screen">
+        <link href="./styles/forms.css" rel="stylesheet" type="text/css" media="screen">
     </head>
     <body>
         <header>
@@ -26,26 +27,76 @@
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="#inicio">Inicio</a>
                             </li>
-                            <li class="nav-item">
+                            <!-- Enlaces ocultos -->
+                            <li class="nav-item" id="nav-progreso" style="display:none;">
                                 <a class="nav-link" href="#progreso">Mi progreso</a>
                             </li>
+                            <li class="nav-item" id="nav-perfil" style="display:none;">
+                                <a class="nav-link" href="#perfil">Mi perfil</a>
+                            </li>
+                            <li class="nav-item" id="logout" style="display:none;">
+                                <a class="nav-link" href="javascript:void(0)">Cerrar sesión</a>
+                            </li>
                         </ul>
+
                     </div>
                 </div>
             </nav>
         </header>
         
         <main>
-
             <!--Hero section-->
             <div id="inicio" class="container my-4">
                 <section class="hero">
                     <div class="hero-content">
                         <h1>Alcanza tus metas diarias</h1>
                         <p>Organiza tus tareas, gana puntos y logra más con DailyQuest.</p>
-                        <a id="comenzar" href="#progreso" class="btn btn-danger" role="button">Comenzar</a>
+                        <a id="comenzar" href="#login" class="btn btn-danger" role="button">Comenzar</a>
                     </div>
                 </section>
+            </div>
+
+            <!-- Login Section -->
+            <div id="login" class="section section-login" style="display:none;">
+                <div class="form-container container my-5">
+                    <h2 class="text-center mb-4">Iniciar sesión</h2>
+                    <form id="form-login" class="form-styled">
+                        <label for="correo-login">Correo electrónico:</label>
+                        <input type="email" id="correo-login" name="correo-login" required>
+
+                        <label for="contraseña-login">Contraseña:</label>
+                        <input type="password" id="contraseña-login" name="contraseña-login" required>
+
+                        <button type="submit" class="btn btn-danger w-100 mt-3">Iniciar sesión</button>
+                    </form>
+                    <p class="text-center mt-2">¿No tienes cuenta? <a href="#registro">¡Regístrate!</a></p>
+                </div>
+            </div>
+            
+            <!-- Registro Section -->
+            <div id="registro" class="section section-registro" style="display:none;">
+                <div class="form-container container my-5">
+                    <h2 class="text-center mb-4">Regístrate</h2>
+                    <form id="form-registro" class="form-styled">
+                        <label for="username-registro">Nombre de usuario:</label>
+                        <input type="text" id="username-registro" name="username-registro" required>
+
+                        <label for="nombre-registro">Nombre:</label>
+                        <input type="text" id="nombre-registro" name="nombre-registro" required>
+
+                        <label for="correo-registro">Correo electrónico:</label>
+                        <input type="email" id="correo-registro" name="correo-registro" required>
+
+                        <label for="contraseña-registro">Contraseña:</label>
+                        <input type="password" id="contraseña-registro" name="contraseña-registro" required>
+
+                        <label for="confirmar-registro">Confirmar contraseña:</label>
+                        <input type="password" id="confirmar-registro" name="confirmar-registro" required>
+
+                        <button type="submit" class="btn btn-danger w-100 mt-3">Registrarse</button>
+                    </form>
+                    <p class="text-center mt-2">¿Ya tienes cuenta? <a href="#login">Inicia sesión</a></p>
+                </div>
             </div>
 
             <!--Dashboard progreso-->
@@ -109,6 +160,28 @@
                     </div>
                 </section>
             </div>
+
+            <!-- Sección Perfil -->
+            <div id="perfil" class="container my-4" style="display:none;">
+                <section class="perfil-section">
+                    <h1>Mi perfil</h1>
+                    <div class="card p-4">
+                        <div class="row">
+                            <!-- Avatar o icono de usuario -->
+                            <div class="col-md-4 text-center">
+                                <i class="bi bi-person-circle" style="font-size: 6rem;"></i>
+                            </div>
+
+                            <!-- Datos del usuario -->
+                            <div class="col-md-8">
+                                <p><strong>Nombre de usuario:</strong> <span id="perfil-username">---</span></p>
+                                <p><strong>Correo:</strong> <span id="perfil-correo">---</span></p>
+                                <p><strong>XP acumulado:</strong> <span id="perfil-xp">0</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </main>
 
         <footer class="footer">
@@ -135,12 +208,15 @@
                 </div>
             </div>
         </footer>
-
+        <script src="app.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            window.API_URL = 'http://localhost:5000/api'
+        </script>
         <script src="./scripts/tareas.js"></script>
         <script src="./app.js"></script>
     </body>

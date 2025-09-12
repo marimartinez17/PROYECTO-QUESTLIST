@@ -1,0 +1,79 @@
+/* ================= Form Sections (Login & Registro) ================= */
+.section-login,
+.section-registro {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    border-radius: 12px;
+    border: none;
+    background-color: #ff6e6162;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Cards */
+.card {
+    border: none;
+    background-color: #ff6e6162;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    height: 100%;
+    width: 100%; 
+    gap: 1rem;
+    box-sizing: border-box;
+}
+
+.form-container h2 {
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.form-container .btn {
+    font-weight: 600;
+}
+
+.form-container p {
+    font-size: 0.9rem;
+}
+
+.form-container a {
+    color: #FF6B6B;
+    text-decoration: none;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+/* ================= Dashboard Section ================= */
+.section-dashboard {
+    padding: 2rem 1rem;
+}
+
+.section-dashboard h1.title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
